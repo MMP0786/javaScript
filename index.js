@@ -110,7 +110,7 @@ console.log(newObj)
 const arrObj = [
     {userId: 1, productName:"Mobile", price: 2000},
     {userId: 2, productName:"Laptop", price: 22000},
-    {userId: 1, productName:"iPad", price: 45000},
+    {userId: 3, productName:"iPad", price: 45000},
 ]
 
 const [{price:Rs}, , {productName}]= arrObj
@@ -126,4 +126,29 @@ const newFilter =arrObj.filter((a)=>{
     return a.price>2000
 });
 
-// console.log(newFilter)
+const namel = function(a, b, ...c){
+    console.log(a, b, c)
+}
+namel(1,2,3,4,5,6)
+
+console.log(newFilter)
+
+ const ans= arrObj.reduce((accumlater, currunt)=>{
+    return accumlater + currunt.price
+},0)
+
+console.log(ans)
+arrObj.sort((a,b)=>b.price- a.price)
+
+console.log(arrObj)
+
+const findArr =arrObj.find(a=>a.price==2000)
+
+console.log(findArr)
+
+const demoArr = [2,45, 23, 66,70]
+
+demoArr.splice(1, 2, 21,44, 24)
+console.log(demoArr)
+demoArr.fill(1, 3, 5)
+console.log(demoArr)
