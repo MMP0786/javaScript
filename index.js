@@ -151,4 +151,80 @@ const demoArr = [2,45, 23, 66,70]
 demoArr.splice(1, 2, 21,44, 24)
 console.log(demoArr)
 demoArr.fill(1, 3, 5)
-console.log(demoArr)
+console.log(demoArr);
+
+function mul(a){
+    return a*3
+}
+const addTwoNo= (num1, num2=0)=>{
+    console.log(num1+num2) 
+    function Inside(num3){
+        return num1+num2+ num3
+    }
+    console.log(Inside(17))
+}
+addTwoNo(50, mul(20))
+
+
+const arrDemoForSet = [12, 34, 23, 6];
+const uniqueNo = new Set(arrDemoForSet)
+uniqueNo.add(15)
+
+console.log(uniqueNo.has(121))
+console.log(uniqueNo)
+
+let length=0;
+for(let no of uniqueNo){
+    console.log(no)
+    length++
+}
+console.log(length);
+
+
+const newMap = new Map([["name", "Musharraf"], ["age", 29], [3, "hobbies"]])
+newMap.set("Other","nothing")
+
+console.log(newMap.get("name"))
+console.log(newMap)
+
+console.log(newMap.values())
+
+// Object 
+const newObj1 = {
+    firstName: "Mohd",
+    lastname: "Musharraf",
+    age:21,
+    about: function(){
+        console.log(`My name is ${this.firstName, this.lastname} and age ${this.age} `)
+    }
+}
+
+
+const newObj3 = {
+    firstName: "Mohd",
+    lastname: "Musharraf panwar",
+    age:21,
+    
+}
+
+
+const newObj4 = {
+    firstName: "Mohd",
+    lastname: "Musharraf shahab",
+    age:21,
+    about: function(){
+        console.log(`My name is ${this.firstName, this.lastname} and age ${this.age} `)
+    }
+}
+
+
+
+const newObj5 = Object.assign({}, newObj3)
+
+const newObj2 ={...newObj1}
+console.log(newObj5.lastname)
+// newObj2.assign(newObj1)
+// console.log(newObj2.firstName)
+
+
+console.log(newObj1.call(newObj3))
