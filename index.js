@@ -202,8 +202,8 @@ const newObj1 = {
 
 const newObj3 = {
     firstName: "Mohd",
-    lastname: "Musharraf panwar",
-    age:21,
+    lastname: "panwar",
+    age:244,
     
 }
 
@@ -211,9 +211,9 @@ const newObj3 = {
 const newObj4 = {
     firstName: "Mohd",
     lastname: "Musharraf shahab",
-    age:21,
-    about: function(){
-        console.log(`My name is ${this.firstName, this.lastname} and age ${this.age} `)
+    age:29,
+    about(){
+        console.log(`My name is ${this.firstName} ${this.lastname} and age ${this.age} `)
     }
 }
 
@@ -223,8 +223,27 @@ const newObj5 = Object.assign({}, newObj3)
 
 const newObj2 ={...newObj1}
 console.log(newObj5.lastname)
-// newObj2.assign(newObj1)
-// console.log(newObj2.firstName)
 
 
-console.log(newObj1.call(newObj3))
+newObj4.about.call(newObj3)
+const newAns =newObj4.about.bind(newObj3);
+
+// newAns()
+const objMethods = {
+    about:function(){
+        (`My name is ${firstName} and also known as ${lastname}`)
+    }
+}
+
+function CreateObj(firstName, lastname, age){
+    const user={}
+    user.firstName= firstName,
+    user.lastname = lastname,
+    user.age= age
+    // user.about = objMethods.about;
+    return user;
+}
+
+const user1 = CreateObj("Mohd", "Musharraf", 22)
+user1.about()
+console.log(user1.firstName)
