@@ -245,5 +245,71 @@ function CreateObj(firstName, lastname, age){
 }
 
 const user1 = CreateObj("Mohd", "Musharraf", 22)
-user1.about()
+// user1.about()
 console.log(user1.firstName)
+
+
+function personInfo(h, w){
+    return `My name is ${this.name} and age ${this.age} ${h} and ${w}`
+}
+const obje ={
+    name: "Akram",
+    age: 45,
+    hobbies: ["Cricket", "reading", "cooking"],
+    // about: personInfo
+}
+
+const ans1 = personInfo.bind(obje)
+console.log(ans1("close", "open"))
+console.log(personInfo.apply(obje, ["reading", "engineer"]))
+// console.log(newObj4.personInfo.call(obje))
+// console.log(personInfo.call(obje, "reading", "engineer"))
+// console.log("first")
+
+
+
+// class in javaScript
+
+class Animal{
+    constructor(name, age, eat){
+        this.name = name,
+        this.age= age,
+        this.eat = eat
+    }
+    isCute(){
+        return this.age<=3 ?true: false
+    }
+}
+
+const animal1 = new Animal('bufflo', 4, "grass")
+console.log(animal1.isCute())
+
+
+class Goat extends Animal{
+    constructor(name, lastName, age, eat, climb, milkForFever){
+        super(name, age, eat)
+        this.lastName =lastName
+        this.climb= climb,
+        this.milkForFever = milkForFever
+    }
+
+   get isSpeak(){
+        console.log("mai, mai")
+    }
+    static get otherEat(){
+        console.log("grass")
+     }
+
+//    set otherName(a){
+//         const [name, lastName] =a.split(" ")
+//         this.name = name,
+//         this.lastName= lastName
+//      }
+}
+
+const goat1 = new Goat("goat maina", 2, "leaf", "roof", "benificial")
+
+goat1.isSpeak;
+Goat.otherEat
+
+// console.log(goat1.otherName("new goat"))
