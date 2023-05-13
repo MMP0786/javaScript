@@ -267,7 +267,9 @@ console.log(personInfo.apply(obje, ["reading", "engineer"]))
 // console.log("first")
 
 
-
+const obj3 = Object.create(obje);
+obj3.newName = "Musharraf"
+console.log(obj3)
 // class in javaScript
 
 class Animal{
@@ -313,3 +315,7 @@ goat1.isSpeak;
 Goat.otherEat
 
 // console.log(goat1.otherName("new goat"))
+
+function sadaghgf(){
+    return
+}
