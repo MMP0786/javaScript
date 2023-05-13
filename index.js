@@ -316,6 +316,6 @@ Goat.otherEat
 
 // console.log(goat1.otherName("new goat"))
 
-function sadaghgf(){
-    return
-}
+// function sadaghgf(){
+//     return
+// }
