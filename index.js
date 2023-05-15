@@ -319,3 +319,11 @@ Goat.otherEat
 // function sadaghgf(){
 //     return
 // }
+
+console.log(window)
+console.log(this)
+
+console.log(firstName)
+var firstName = "Musharraf"
+
+console.log(firstName)
