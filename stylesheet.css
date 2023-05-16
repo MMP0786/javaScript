@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.containor{
+    margin:0 1.5rem ;
+    padding: 1rem;
+}
+
+ul{
+    display: flex;
+    width: 35vw;
+    max-width: 70vw;
+    justify-content: space-between;
+}
+
+nav ul li{
+    list-style: none;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+header{
+    background-image: url("/download.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+    color: aliceblue;
+}
+
+.manage-task{
+    position: absolute;
+    right: 50%;
+    top: 40%;
+    transform: translate(50%, 50%);
+}
+
+.input-todo {
+    margin: auto;
+    /* border: 1px solid black; */
+    width: 1100px;
+    margin-top: 1rem;
+    max-width: 85%;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-todo input[type= submit]{
+    width: 15%;
+    height: 100%;
+    font-weight: 600;
+}
+
+.input-todo input[type= text]{
+    width: 84%;
+    height: 100%
+}
+
+input::-webkit-input-placeholder{
+    padding-left: 10px;
+}
