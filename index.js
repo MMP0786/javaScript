@@ -350,4 +350,78 @@ newLists = Array.from(newLists);
 let root = document.getRootNode()
 
 // console.log(root.childNodes[0].nextSibling);
-console.log(root.childNodes[1].childNodes[0]);
+// console.log(root.childNodes[1].childNodes[2].childNodes[1].parentNode);
+
+console.log(list.parentNode.classList.toggle('nav-containor'))
+
+const nav_item = document.createElement("li");
+// const nav_itemText = document.createTextNode("this is node");
+// nav_item.append(nav_itemText);
+nav_item.textContent = "this is text";
+
+console.log(nav_item)
+// list.prepend(nav_item)
+
+const navItem = nav_item.cloneNode(true)
+console.log(navItem);
+
+// navItem.insertBefore("li", navItem)
+console.log(list.firstElementChild.textContent)
+const multiEvents = list.children;
+for(let multiEvent of multiEvents){
+    multiEvent.addEventListener("click", (e)=>{
+        e.target.style.color = "Pink"
+    })}
+
+
+
+    const head1 = document.querySelector(".heading1");
+    const head2 = document.querySelector(".heading2");
+    const head3 = document.querySelector(".heading3");
+    const head4 = document.querySelector(".heading4");
+    const head5 = document.querySelector(".heading5");
+    const head6 = document.querySelector(".heading6");
+    const head7 = document.querySelector(".heading7");
+    // const head1 = document.querySelector("#heading1");
+
+    function textChange(ele, text, color, time, onSuccess, onFailare){
+        setTimeout(()=>{
+            ele.textContent = text;
+            ele.style.color = color;
+
+            if(onSuccess){
+                onSuccess()
+            }else{
+                if(onFailare){
+                    onFailare()
+                }
+            }
+        }, time)
+    }
+
+    console.log(head1.textContent)
+
+    textChange(head1, "heading1", "red", 1000, ()=>{        
+        textChange(head2, "heading2", "green", 1000, ()=>{        
+            textChange(head3, "heading3", "violet", 1000, ()=>{        
+                textChange(head4, "heading4", "yellow", 1000, ()=>{        
+                    textChange(head5, "heading5", "orange", 1000, ()=>{        
+                        textChange(head6, "heading6", "pink", 1000, ()=>{        
+                            textChange(head7, "heading7", "blue", 1000, ()=>{        
+                            
+                            }, ()=>{
+                                console.log("something wrong")})
+                        }, ()=>{
+                            console.log("something wrong")})
+                    }, ()=>{
+                        console.log("something wrong")})
+                }, ()=>{
+                    console.log("something wrong")})
+            }, ()=>{
+                console.log("something wrong")})
+        }, ()=>{
+            console.log("something wrong")})
+    }, ()=>{
+        console.log("something wrong")})
+
+

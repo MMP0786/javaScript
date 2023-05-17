@@ -71,3 +71,11 @@ header{
 input::-webkit-input-placeholder{
     padding-left: 10px;
 }
+
+.headings{
+    margin: auto;
+    margin-top: 20px;
+    /* border: 1px solid black; */
+    width: 140px;
+    text-align: center;
+}
