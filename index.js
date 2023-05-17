@@ -328,6 +328,26 @@
 
 // console.log(firstName)
 
-const list = document.getElementById("list")
-
+const list = document.querySelector("#list")
+// const list = document.getElementById("list")
+list.childNodes[1].style.color = "Red"
 // console.log(list.childNodes[1].innerText)
+list.childNodes[1].setAttribute("a", "this is a");
+
+console.log(list.childNodes[1].getAttribute("href"))
+
+let newLists =list.childNodes
+
+newLists = Array.from(newLists);
+
+// newLists.forEach(a=a=> console.log(a))
+
+
+// for(let newList of newLists){
+//     console.log(newList.innerText)
+// }
+
+let root = document.getRootNode()
+
+// console.log(root.childNodes[0].nextSibling);
+console.log(root.childNodes[1].childNodes[0]);
