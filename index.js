@@ -407,21 +407,13 @@ for(let multiEvent of multiEvents){
                 textChange(head4, "heading4", "yellow", 1000, ()=>{        
                     textChange(head5, "heading5", "orange", 1000, ()=>{        
                         textChange(head6, "heading6", "pink", 1000, ()=>{        
-                            textChange(head7, "heading7", "blue", 1000, ()=>{        
-                            
-                            }, ()=>{
-                                console.log("something wrong")})
-                        }, ()=>{
-                            console.log("something wrong")})
-                    }, ()=>{
-                        console.log("something wrong")})
-                }, ()=>{
-                    console.log("something wrong")})
-            }, ()=>{
-                console.log("something wrong")})
-        }, ()=>{
-            console.log("something wrong")})
-    }, ()=>{
-        console.log("something wrong")})
+                            textChange(head7, "heading7", "blue", 1000, ()=>{                                   
+                            }, ()=>{console.log("something wrong")})
+                        }, ()=>{console.log("something wrong")})
+                    }, ()=>{console.log("something wrong")})
+                }, ()=>{console.log("something wrong")})
+            }, ()=>{console.log("something wrong")})
+        }, ()=>{console.log("something wrong")})
+    }, ()=>{console.log("something wrong")})
 
 
