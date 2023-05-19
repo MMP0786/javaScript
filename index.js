@@ -401,19 +401,111 @@ for(let multiEvent of multiEvents){
 
     console.log(head1.textContent)
 
-    textChange(head1, "heading1", "red", 1000, ()=>{        
-        textChange(head2, "heading2", "green", 1000, ()=>{        
-            textChange(head3, "heading3", "violet", 1000, ()=>{        
-                textChange(head4, "heading4", "yellow", 1000, ()=>{        
-                    textChange(head5, "heading5", "orange", 1000, ()=>{        
-                        textChange(head6, "heading6", "pink", 1000, ()=>{        
-                            textChange(head7, "heading7", "blue", 1000, ()=>{                                   
-                            }, ()=>{console.log("something wrong")})
-                        }, ()=>{console.log("something wrong")})
-                    }, ()=>{console.log("something wrong")})
-                }, ()=>{console.log("something wrong")})
-            }, ()=>{console.log("something wrong")})
-        }, ()=>{console.log("something wrong")})
-    }, ()=>{console.log("something wrong")})
+    // textChange(head1, "heading1", "red", 1000, ()=>{        
+    //     textChange(head2, "heading2", "green", 1000, ()=>{        
+    //         textChange(head3, "heading3", "violet", 1000, ()=>{        
+    //             textChange(head4, "heading4", "yellow", 1000, ()=>{        
+    //                 textChange(head5, "heading5", "orange", 1000, ()=>{        
+    //                     textChange(head6, "heading6", "pink", 1000, ()=>{        
+    //                         textChange(head7, "heading7", "blue", 1000, ()=>{                                   
+    //                         }, ()=>{console.log("something wrong")})
+    //                     }, ()=>{console.log("something wrong")})
+    //                 }, ()=>{console.log("something wrong")})
+    //             }, ()=>{console.log("something wrong")})
+    //         }, ()=>{console.log("something wrong")})
+    //     }, ()=>{console.log("something wrong")})
+    // }, ()=>{console.log("something wrong")})
 
+
+// const newPromise = new Promise((resolve, reject) => {
+//     const value = 0;
+//     if(value){
+//         resolve("this is resolve");
+//     }else{
+//         reject("this is reject")
+//     }
+// })
+
+// newPromise.then((res)=>{console.log(res)})
+// .catch(a=> console.log(a))
+
+function textchange1(ele, heading, color, time){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(ele){
+                ele.textContent = heading;
+                ele.style.color = color;
+
+                resolve()
+            }else{
+                reject()
+            }
+        }, time);
+
+    })
+}
+
+textchange1(head1, "heading1", "red", 1000)
+    .then(()=>textchange1(head2, "heading2", "Green", 1000))
+        .then(()=>textchange1(head3, "heading3", "meroon", 1000))
+            .then(()=>textchange1(head4, "heading4", "blue", 1000))
+                .then(()=>textchange1(head5, "heading5", "grey", 1000))
+                    .then(()=>textchange1(head6, "heading6", "orange", 1000))
+                        .then(()=>textchange1(head7, "heading7", "violet", 1000))
+
+                        .catch(()=>{console.log("something went wrong")})
+//                     .catch(()=>{console.log("something went wrong")})
+//                 .catch(()=>{console.log("something went wrong")})
+//             .catch(()=>{console.log("something went wrong")})
+//         .catch(()=>{console.log("something went wrong")})
+//     .catch(()=>{console.log("something went wrong")})
+// .catch(()=>{console.log("something went wrong")})
+
+const URL ='https://jsonplaceholder.typicode.com/posts';
+// const xhr = new XMLHttpRequest()
+
+// console.log(xhr)
+// xhr.open("GET", URL)
+
+// // xhr.onreadystatechange = function newFun(){
+// xhr.onload = function newFun(){
+//     // if(xhr.readyState===4){
+//     if(xhr.status>=200 && xhr.status<=300){
+//         console.log("success")
+//         console.log(xhr.readyState)
+//         const data = JSON.parse(xhr.response);
+//         console.log(data[1].body)
+//     }
+//     else{
+//         console.log("some thing went wrong")
+//     }
+// }
+
+// xhr.onerror = ()=>{console.log("some err occured")}
+// xhr.send()
+
+fetch(URL).then((res)=>{
+    // if(res.ok)
+    return res.json()
+}).then(data=>{
+    console.log(data)
+}).catch(err=>{
+    console.log("some err occured")
+})
+
+async function dataPrint(){
+    const res = await fetch(URL);
+    if(res.ok){
+        const data = await res.json();
+    }else{
+        throw new Error("this is a err")
+    }
+    return data;
+}
+
+dataPrint().then((data)=>{
+    console.log(data)
+}).catch((err)=>{
+    console.log("err from async", err)
+})
 
