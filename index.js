@@ -484,28 +484,112 @@ const URL ='https://jsonplaceholder.typicode.com/posts';
 // xhr.onerror = ()=>{console.log("some err occured")}
 // xhr.send()
 
-fetch(URL).then((res)=>{
-    // if(res.ok)
+fetch("URL1").then((res)=>{
+    if(res.ok)
     return res.json()
+    else{
+        throw new Error("Error from fetch")
+    }
 }).then(data=>{
-    console.log(data)
+    // console.log(data)
 }).catch(err=>{
-    console.log("some err occured")
+    console.log("some err occured", err)
 })
 
 async function dataPrint(){
     const res = await fetch(URL);
+    let data =[]
     if(res.ok){
-        const data = await res.json();
+         data = await res.json();
     }else{
-        throw new Error("this is a err")
+        throw new Error("this is a err in api url")
     }
     return data;
 }
 
 dataPrint().then((data)=>{
-    console.log(data)
+    // console.log(data)
 }).catch((err)=>{
     console.log("err from async", err)
 })
 
+
+let xhr1 = new XMLHttpRequest()
+
+xhr1.open("Get", URL)
+
+xhr1.onreadystatechange = ()=>{
+    console.log(xhr1.readyState)
+    if(xhr1.readyState ==4){
+        console.log(xhr1)
+        console.log(xhr1.response[1])
+    }
+}
+
+xhr1.send()
+
+function flatCode(ele, text, color, time){
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            if(ele){
+                ele.textContent = text,
+                ele.style.color = color
+                resolve()
+            }else{
+                reject()
+            }
+        }, time)
+    })
+}
+
+flatCode(head1, "Luqman", "red", 2000)
+ .then(()=>{})
+
+ let passKey = setInterval(()=>{
+    let pass = Math.floor(Math.random()*6 +(5));
+    console.log(pass)
+ }, 1000)
+
+ clearInterval(passKey)
+
+const demo = document.querySelector('.heading-demo')
+const parent = document.querySelector('.parent')
+const child = document.querySelector('.child')
+console.log(child.classList)
+
+demo.insertAdjacentHTML("beforeend", "<div> Parent of Grand</div>")
+demo.addEventListener('click', (e)=>{
+    console.log( e.target.getBoundingClientRect().height)
+})
+// parent.addEventListener('click', ()=>{
+//     console.log("father")
+// })
+// child.addEventListener('click', ()=>{
+//     console.log("Child")
+// })
+// demo.addEventListener('click', ()=>{
+//     console.log("grand father !!!")
+// },true)
+// parent.addEventListener('click', ()=>{
+//     console.log("father !!!")
+// },true)
+// child.addEventListener('click', ()=>{
+//     console.log("Child !!!")
+// },true)
+
+class Birds{
+    constructor(leg, wings, name, age){
+        this.leg = leg,
+        this.wings= wings,
+        this.name = name,
+        this.age = age
+    }
+    about(a){
+        console.log(`Bird name is ${this.name} and age is ${this.age} and eat is ${a}`)
+    }
+}
+
+const hen = new Birds(2, "Yes", "Hen", 5)
+hen.about("wheat")
+
+console.log(hen.age)
