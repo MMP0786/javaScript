@@ -593,3 +593,29 @@ const hen = new Birds(2, "Yes", "Hen", 5)
 hen.about("wheat")
 
 console.log(hen.age)
+
+class PeoCock extends Birds{
+    constructor( leg, wings, name, age, lives){
+        super(leg, wings, name, age)
+        this.lives = lives
+    }
+   static get isSpeak(){
+        console.log("Speak is mew mew")
+    }
+    set fullHouse(a){
+        const [lives1, lives2] = a.split(" ")
+        this.lives = lives2
+        return lives
+
+    }
+    isfly(){
+        console.log("max 1 mile")
+    }
+}
+
+const PeoCock1 = new PeoCock(2, "fly", "Poehen", 5, "Forest home Zoo")
+
+// PeoCock1.fullHouse("joe bar")
+PeoCock1.isfly()
+
+console.log(PeoCock1.lives)
