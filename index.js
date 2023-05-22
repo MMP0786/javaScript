@@ -665,3 +665,53 @@
 // console.log(objj2.__proto__)
 // about.prototype.name = "musharraf"
 // console.log(about.prototype.name)
+
+
+// const set = new Set(arr)
+// set.add(4)
+// console.log(set)
+
+// for(let a of set){
+//     console.log(a)
+// }
+
+// const obj = {
+//     name: 'musharraf',
+//     age:21
+// }
+
+// const map = new Map()
+// map.set(obj,obj)
+
+// map.set({name1:"panwar"})
+// console.log(map.get(obj))
+
+// arr.forEach(a=>{
+    //     console.log(a)
+    // })
+    
+    const arr = [
+        {productName:"mobile", price: 20000},
+        {productName:"Laptop", price: 12000},
+        {productName:"Tablet", price: 18000},
+    ]
+    arr.map(a=>{
+    const b = a.price*10;
+    console.log(b)
+})
+
+const arr1 =arr.filter(a=>{
+ if( a.price>=13000){
+    return a
+ }
+})
+
+console.log(arr1)
+
+const arrReduce = arr.reduce((acc, curr)=>{
+    // let sum =0;
+    // sum = acc.price + curr
+    return acc+ curr.price
+},0)
+
+console.log(arrReduce)
