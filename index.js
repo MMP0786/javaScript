@@ -715,3 +715,9 @@ const arrReduce = arr.reduce((acc, curr)=>{
 },0)
 
 console.log(arrReduce)
+
+const sortArr =arr.sort((a,b)=>{
+    return a.price-b.price
+})
+
+console.log(sortArr)
