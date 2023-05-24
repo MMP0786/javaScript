@@ -690,34 +690,129 @@
     //     console.log(a)
     // })
     
-    const arr = [
-        {productName:"mobile", price: 20000},
-        {productName:"Laptop", price: 12000},
-        {productName:"Tablet", price: 18000},
-    ]
-    arr.map(a=>{
-    const b = a.price*10;
-    console.log(b)
-})
+//     const arr = [
+//         {productName:"mobile", price: 20000},
+//         {productName:"Laptop", price: 12000},
+//         {productName:"Tablet", price: 18000},
+//     ]
+//     arr.map(a=>{
+//     const b = a.price*10;
+//     console.log(b)
+// })
 
-const arr1 =arr.filter(a=>{
- if( a.price>=13000){
-    return a
- }
-})
+// const arr1 =arr.filter(a=>{
+//  if( a.price>=13000){
+//     return a
+//  }
+// })
 
+// console.log(arr1)
+
+// const arrReduce = arr.reduce((acc, curr)=>{
+//     // let sum =0;
+//     // sum = acc.price + curr
+//     return acc+ curr.price
+// },0)
+
+// // console.log(arrReduce)
+
+// const sortArr =arr.sort((a,b)=>{
+//     return a.price-b.price
+// })
+
+// console.log(sortArr)
+
+// const str = "Musharraf"
+// let newstr =str.indexOf('s')
+// newstr = str.substring(1, 5)
+// newstr= str.replace("sh", "mu")
+// newstr = str.charAt(2)
+// newstr = str
+// console.log(newstr)
+
+const arr = [23, 44, 22, 78, 12]
+
+let arr1 =[...arr]
+// arr1 = arr1.join("")
+// arr1 =arr1.slice(1, 2)
+// arr1 = [1,2].concat(arr)
+// arr1= arr1.copyWithin(2, 1,3)
+// arr1.fill(0, 2, 4)
+// arr1.splice(3, 1)
+
+arr1.entries(arr1)
 console.log(arr1)
 
-const arrReduce = arr.reduce((acc, curr)=>{
-    // let sum =0;
-    // sum = acc.price + curr
-    return acc+ curr.price
-},0)
+const [arr2, , arr3] = arr;
+console.log(arr2, arr3)
 
-console.log(arrReduce)
+const key1 = "name1";
+const key2 = "fname"
 
-const sortArr =arr.sort((a,b)=>{
-    return a.price-b.price
+const value1 = "mukarraf"
+const value2 ="panwar"
+
+const obj1 ={
+    [key1]:value1,
+    [key2]: value2
+}
+
+// const obj2 = Object.create()
+const obj = {
+    name: "Musharraf",
+    sname: "panwar",
+    age: 23
+}
+
+for(let i in obj){
+    console.log(obj[i])
+}
+console.log(Object.keys(obj))
+
+function sumCal(...a){
+    let sum =0;
+    for(let i of a){
+        sum +=i
+    }
+    return sum;
+}
+console.log(sumCal(2, 34, 44,22))
+
+
+const fun = (a, b, c, f1, f2)=>{
+    setInterval(()=>{
+        if(a){
+            a.style.color= b
+            a.textContent =c
+            f1()
+        }else{
+            f2()
+        }
+
+    },1000)
+}
+
+// fun(a, b, c, ()=>{
+//     fun()
+// }, ()=>{})
+
+function p1(){
+    return new Promise((resolve, reject) => {
+        let a = 19;
+        setInterval(() => {
+            if(a){
+                resolve("It's come from resolve")
+            }else{
+                reject("It's come from reject")
+            }
+                // a.style.color= b
+                // a.textContent =c
+        }, 1000);
+    })
+}  
+
+p1().then((a)=>{
+    console.log(a)
+}).then((b)=>{
+    console.log(b)
 })
-
-console.log(sortArr)
